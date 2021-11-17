@@ -17,4 +17,12 @@ class Genre extends Model
     protected $fillable = [
         'title', 'description', 'cover',
     ];
+
+    /**
+     * Get the books for the genre.
+     */
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }

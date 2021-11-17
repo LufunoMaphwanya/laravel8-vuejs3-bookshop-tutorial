@@ -17,4 +17,12 @@ class Review extends Model
     protected $fillable = [
         'rating', 'comment'
     ];
+
+    /**
+     * Get the book that owns the review.
+     */
+    public function book()
+    {
+        return $this->belongsTo(Book::class);
+    }
 }
