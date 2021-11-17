@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
         collect($users)->each(function ($user, $key) {
             DB::table('users')->insert([
                 'name' => $user,
-                'email' => strtolower(str_replace(" ", "-", $user)).'@gmail.com',
+                'email' => strtolower(str_replace(" ", "", $user)).'@gmail.com',
                 'password' => Hash::make('password'),
             ]);
         });
