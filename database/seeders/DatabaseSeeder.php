@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             BooksSeeder::class,
             GenresSeeder::class,
             ReviewsSeeder::class,
+            PagesSeeder::class,
         ]);
 
     }
