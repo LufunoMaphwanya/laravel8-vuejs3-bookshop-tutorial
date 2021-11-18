@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use Image;
+use App\Models\Review;
 
 class BooksController extends Controller
 {
@@ -16,7 +17,7 @@ class BooksController extends Controller
     public function library()
     {
         return view('books-list', [
-            'books' => Book::paginate(5, ['id', 'title', 'subtitle', 'cover'])
+            'books' => Book::with('reviews')->paginate(5, ['id', 'title', 'subtitle', 'cover'])
         ]);
 
         // return             [Book::paginate(5, ['id', 'title', 'subtitle', 'cover'])];

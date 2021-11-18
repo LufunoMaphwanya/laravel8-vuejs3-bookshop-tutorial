@@ -26,10 +26,10 @@
       props = reactive(props);
       return {
         booksInOrder:computed(()=>{
-       return [
-         props.books,
-       ]
-     }),
+            return [
+                props.books,
+            ]
+        }),
       };
     },
   };

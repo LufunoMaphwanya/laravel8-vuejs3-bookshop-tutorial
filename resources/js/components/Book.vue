@@ -7,7 +7,7 @@
   <div class="card-body">
     <h5 class="card-title">{{book.title}}</h5>
     <p class="card-text">{{book.subtitle}}</p>
-    <a href="#" class="btn btn-primary">Read</a>
+    <h3 v-for="i in averageRating" :key="i">&#11088;</h3>
   </div>
 </div>
 </template>
@@ -27,6 +27,9 @@
     setup(props, { emit }) {
       props = reactive(props);
       return {
+          averageRating:computed(()=>{
+            return 4;
+        }),
       };
     },
   };
