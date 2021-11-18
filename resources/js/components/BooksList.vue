@@ -3,7 +3,6 @@
       <Book v-for="book in books"
        :key="book.id"
        :book="book"
-       :storagePath="storagePath"
        />
   </div>
 </template>
@@ -17,10 +16,6 @@
     components: { Book },
     props: {
       books: { type: Array, required: true, default: () => [] },
-      storagePath: {
-        type: String,
-        required: true,
-      },
     },
 
     setup(props, { emit }) {

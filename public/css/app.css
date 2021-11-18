@@ -12,3 +12,8 @@ h1 {
     margin: 10px;
 
 }
+
+.book-cover {
+    height: 200px;
+    overflow: hidden;
+}
