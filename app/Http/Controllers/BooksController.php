@@ -16,8 +16,11 @@ class BooksController extends Controller
     public function library()
     {
         return view('books-list', [
-            'books' => Book::all('id', 'title', 'subtitle', 'cover')
+            'books' => Book::paginate(5, ['id', 'title', 'subtitle', 'cover'])
         ]);
+
+        // return             [Book::paginate(5, ['id', 'title', 'subtitle', 'cover'])];
+
     }
 
     /**

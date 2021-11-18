@@ -1,6 +1,9 @@
 <template>
   <div class="list-items">
-      <Book v-for="book in books"
+
+      <page-nav :links="books.links"/>
+      <hr />
+      <Book v-for="book in books.data"
        :key="book.id"
        :book="book"
        />
@@ -9,11 +12,12 @@
 
 <script>
   import Book from './Book';
+  import PageNav from './PageNav';
   import { reactive, computed } from 'vue';
 
   export default {
     name: 'BooksList',
-    components: { Book },
+    components: { Book, PageNav},
     props: {
       books: { type: Array, required: true, default: () => [] },
     },

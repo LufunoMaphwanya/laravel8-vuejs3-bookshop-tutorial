@@ -17,3 +17,6 @@ h1 {
     height: 200px;
     overflow: hidden;
 }
+
+nav a { float: left;}
+nav a:hover { color: gold !important; }
