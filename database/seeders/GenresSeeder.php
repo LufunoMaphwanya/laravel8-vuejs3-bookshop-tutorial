@@ -26,7 +26,7 @@ class GenresSeeder extends Seeder
         collect($genres)->each(function ($genre, $key) {
             DB::table('genres')->insert([
                 'title' => explode(':', $genre['title'])[0],
-                'description' => explode(':', $genre['title'])[0] ?? null,
+                'description' => explode(':', $genre['title'])[1] ?? null,
             ]);
         });
     }

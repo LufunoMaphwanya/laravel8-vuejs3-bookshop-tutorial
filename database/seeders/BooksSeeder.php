@@ -42,7 +42,7 @@ class BooksSeeder extends Seeder
         collect($books)->each(function ($book, $key) {
             DB::table('books')->insert([
                 'title' => explode(':', $book['title'])[0],
-                'subtitle' => explode(':', $book['title'])[0] ?? null,
+                'subtitle' => explode(':', $book['title'])[1] ?? null,
                 'cover' => $book['cover'],
                 'summary' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

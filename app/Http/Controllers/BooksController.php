@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use Image;
 
 class BooksController extends Controller
 {
@@ -14,6 +15,20 @@ class BooksController extends Controller
      */
     public function library()
     {
-        return Book::all();
+        return view('books-list', [
+            'books' => Book::all('id', 'title', 'subtitle', 'cover')
+        ]);
+    }
+
+    /**
+     * Show the library
+     *
+     * @return String path to image
+     */
+    public function cover($book_id)
+    {
+        $cover = Book::find($book_id)->cover;
+        $path = storage_path("/app/public/book-covers/{$cover}");
+        return Image::make($path)->response();
     }
 }

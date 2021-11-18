@@ -5,3 +5,10 @@ h1 {
 .logo-div {
     padding:30px
 }
+
+
+.card {
+    float: left;
+    margin: 10px;
+
+}
